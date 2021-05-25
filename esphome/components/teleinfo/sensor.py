@@ -6,6 +6,7 @@ from esphome.const import (
     CONF_SENSOR,
     DEVICE_CLASS_POWER,
     ICON_EMPTY,
+    STATE_CLASS_MEASUREMENT,
     UNIT_WATT_HOURS,
 )
 
@@ -19,7 +20,7 @@ TELEINFO_TAG_SCHEMA = cv.Schema(
     {
         cv.Required(CONF_TAG_NAME): cv.string,
         cv.Required(CONF_SENSOR): sensor.sensor_schema(
-            UNIT_WATT_HOURS, ICON_EMPTY, 0, DEVICE_CLASS_POWER
+            UNIT_WATT_HOURS, ICON_EMPTY, 0, DEVICE_CLASS_POWER, STATE_CLASS_MEASUREMENT
         ),
     }
 )
